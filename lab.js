@@ -251,7 +251,7 @@ harry.castSpell()
 //Code Here
 
 class Phone {
-  constructor (brand, model, storage, color, price,){
+  constructor (brand, model, storage, color, price){
     this.brand = brand;
     this.model = model;
     this.storage = storage;
@@ -262,7 +262,7 @@ class Phone {
 
   sell(){
     this.sold = true
-    console.log(`${brand}, ${model} has been sold`)
+    console.log(`${this.brand}, ${this.model} has been sold`)
   }
 
   changePrice(newPrice){
@@ -282,9 +282,9 @@ class Phone {
 
 //Code Here
 
-let phoneOne = new Phone ('')
-let phoneTwo = new Phone ('') 
-let phoneThree = new Phone ('')
+let phoneOne = new Phone ('Nokia', 'G9', 10, 'blue', 200);
+let phoneTwo = new Phone ('Samsung', 'Galaxy', 64, 'silver', 300);
+let phoneThree = new Phone ('Apple', 'iPhone 5', 64, 'black', 900);
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -293,7 +293,9 @@ let phoneThree = new Phone ('')
 */ 
 
 //Code Here 
-
+console.log(phoneTwo.price)
+phoneTwo.changePrice(200)
+console.log(phoneTwo.price)
 
 /*
   Now call the sell method on one of your other phone objects
@@ -302,7 +304,8 @@ let phoneThree = new Phone ('')
 */
 
 //Code Here 
-
+phoneThree.sell();
+console.log(phoneThree.sold);
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
@@ -313,14 +316,20 @@ let phoneThree = new Phone ('')
 */
 
 //do not edit this object
-const colors = {
+let colors = {
   background: 'red',
   highlight: 'blue',
   text: 'yellow'
-}
+};
 //do not edit this object
 
 //Code Here 
+
+let colorsCopy = {
+  ...colors,
+};
+
+console.log(colorsCopy);
 
 
 
