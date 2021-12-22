@@ -93,7 +93,7 @@ var carDetails = {
 
 //Code Here
 
-
+let {color, make, model, year} = carDetails
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -105,7 +105,8 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
-  
+  let {title, firstName, lastName} = obj;
+
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -125,7 +126,10 @@ function greeting( obj ) {
 
 //Code Here
 
-
+function totalPopulation (obj) {
+  const {utah, california, texas, arizona} = obj
+  return (utah + california + texas + arizona)
+}
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -139,7 +143,12 @@ function greeting( obj ) {
 
 //Code Here
 
-
+function ingredients (obj) {
+  let {carb, fat, protein} = obj
+  let resultArr = [];
+  resultArr.push(carb, fat, protein)
+  return resultArr;
+};
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
@@ -161,14 +170,15 @@ var user = {
 
 //Code Here
 
-
+user.name = 'Bryan G. Smith'
+user.email = 'bryan.smith@devmountain.in'
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
   Using the user object above, delete the users age off of the object.
 */
 
 //Code Here
-
+delete user.age
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -179,8 +189,17 @@ var user = {
 
 //Code here
 
+class Cat {
+  constructor (name, age, color){
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+}
 
+let bobby = new Cat ('Bobby', '4', 'black')
 
+console.log(bobby.name)
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
   Create a class called 'Wizard'. Make sure to call your constructor, and require these 3 parameters: name, age, favoriteSpell.
@@ -190,6 +209,21 @@ var user = {
 */
 
 //Code here
+
+class Wizard {
+  constructor (name, age, favoriteSpell){
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+  castSpell (){
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
+}
+
+let harry = new Wizard ('Harry', '30', 'Ron be gone')
+
+harry.castSpell()
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -216,6 +250,25 @@ var user = {
 
 //Code Here
 
+class Phone {
+  constructor (brand, model, storage, color, price,){
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  }
+
+  sell(){
+    this.sold = true
+    console.log(`${brand}, ${model} has been sold`)
+  }
+
+  changePrice(newPrice){
+    this.price = newPrice
+  }
+}
   
 /*
     Next make three new phone instances using your class.
@@ -229,6 +282,9 @@ var user = {
 
 //Code Here
 
+let phoneOne = new Phone ('')
+let phoneTwo = new Phone ('') 
+let phoneThree = new Phone ('')
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
